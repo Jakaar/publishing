@@ -1,0 +1,88 @@
+.footer {
+    width: 100%;
+    background-color: #303030;
+    position: relative;
+    z-index: 5;
+    &__content {
+        padding: 4rem 0;
+        color: #a5a5a5;
+        @include flexItems(column , space-between , flex-start , 2rem);
+        @media (min-width: 800px) {
+            flex-direction: row;
+        }
+
+        @media (min-width: 1200px) {
+            gap: 6rem;
+        }
+    }
+
+    &__nav {
+        width: 100%;
+        .select {
+            width: 100%;
+            margin-bottom: 1rem;
+            @include flexItems(row , space-between , center , 0);
+            .row {
+                @include flexItems(row , center , center , 1.5rem);
+                h1 {
+                    font-size: 13px;
+                }
+                a {
+                    color: #a5a5a5;
+                    text-decoration: none;
+                }
+
+                &:nth-child(2){
+                    @media (min-width: 800px) {
+                        display: none;
+                    }
+                }
+            }
+        }
+
+        .info {
+            .address {
+                font-size: 13px;
+            }
+            .copyright {
+                font-size: 13px;
+                margin-top: 1rem;
+                font-family: 'Poppins', sans-serif;
+            }
+        }
+
+    }
+    .options_container {
+        width: 100%;
+        .row {
+            width: 100%;
+            display: none !important;
+            @include flexItems(row , flex-end , center , 1rem);
+            margin-bottom: 1rem;
+            a {
+                color: #a5a5a5;
+                text-decoration: none;
+            }
+        }
+        .options {
+            width: 100%;
+            @include flexItems(row , space-between , center , 0);
+            padding: 1rem 1.5rem;
+            background-color: #3a3a3a;
+            p {
+                font-family: 'Poppins', sans-serif;
+                letter-spacing: 0.03em;
+                font-size: 13px;
+                font-weight: 500;
+            }
+        }
+
+        @media (min-width: 800px) {
+            width: 300px;
+            .row {
+                display: flex !important;
+            }
+        }
+    }
+
+}

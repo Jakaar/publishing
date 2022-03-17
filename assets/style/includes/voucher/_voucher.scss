@@ -1,0 +1,311 @@
+.main {
+    width: 100%;
+    background-color: white;
+}
+
+.voucher {
+    width: 100%;
+    padding: 4rem 0;
+    padding-bottom: 6rem;
+    &__items {
+        .title {
+            font-weight: 700;
+            font-size: 20px;
+            color: #222222;
+            margin-bottom: 1rem;
+        }
+
+        .items {
+            display: flex;
+            align-items: flex-start;
+            flex-direction: column;
+            justify-content: space-between;
+
+            .description {
+                font-weight: 400;
+                font-size: 16px;
+                line-height: 28px;
+                color: #333333;
+            }
+
+            .btn {
+                width: 100%;
+                padding: 1.5rem 0 2.5rem 0;
+                button {
+                    background-color: #fff;
+                    color: #35af8b;
+                    width: 100%;
+                    padding: 1.25rem;
+                    border: 1px solid #35af8b;
+                    font-weight: bold;
+                    font-family: $noto;
+                    @include flexItems(row, center, center, 0.5rem);
+                }
+            }
+        }
+
+        @media (min-width: 768px) {
+            .title {
+                font-size: 38px;
+            }
+            .description {
+                font-size: 1rem;
+            }
+            .items {
+                flex-direction: row;
+                align-items: flex-end;
+                padding-bottom: 4rem;
+                gap: 5rem;
+                .btn {
+                    padding: 0;
+                    width: 300px;
+                }
+            }
+        }
+    }
+
+    &__schema {
+        width: 100%;
+        position: relative;
+        padding: 3rem 1rem;
+        border: 1px solid #e7e7e7;
+        @include flexItems(column , center , center , 4rem);
+        &__item {
+            position: relative;
+            img {
+                position: relative;
+                z-index: 3;
+                font-weight: 500;
+                color: #333;
+            }
+            .txt {
+                position: relative;
+                z-index: 3;
+                text-align: center;
+                white-space: nowrap;
+            }
+            &--middle {
+                width: 180px;
+                height: 180px;
+                border: 1px dashed #ffeed0;
+                border-radius: 50%;
+                margin: 2.5rem 0;
+                background-color: #FFFCF8;
+                @include flexItems(row , center , center , 0);
+                .circle {
+                    width: 120px;
+                    height: 120px;
+                    border: 1px dashed #ffd181;
+                    border-radius: 50%;
+                    background-color: #FFF7E9;
+                    position: relative;
+                    @include flexItems(column , center , center , .25rem);
+                    #red1 {
+                        position: absolute;
+                        bottom: 80%;
+                        left: 0;
+                        @media (min-width: 1024px) {
+                            display: none;
+                        }
+                    }
+                    #hred1 {
+                        display: none;
+                        @media (min-width: 1024px) {
+                            position: absolute;
+                            bottom: -10%;
+                            right: 100%;
+                            display: block;
+                        }
+                    } 
+                    #hred2 {
+                        display: none;
+                        @media (min-width: 1024px) {
+                            position: absolute;
+                            bottom: -10%;
+                            left: 100%;
+                            display: block;
+                        }
+                    } 
+
+                    #hblue1 {
+                        display: none;
+                        @media (min-width: 1024px) {
+                            position: absolute;
+                            top: -30%;
+                            left: 100%;
+                            display: block;
+                        }
+                    } 
+                    #hblue2 {
+                        display: none;
+                        @media (min-width: 1024px) {
+                            position: absolute;
+                            top: -30%;
+                            right: 100%;
+                            display: block;
+                        }
+                    } 
+                    #red2 {
+                        position: absolute;
+                        top: 80%;
+                        left: 0;
+                        @media (min-width: 1024px) {
+                            display: none;
+                        }
+                    }
+                    #blue1 {
+                        position: absolute;
+                        bottom: 80%;
+                        left: 80%;
+                        @media (min-width: 1024px) {
+                            display: none;
+                        }
+                    }
+                    #blue1 {
+                        position: absolute;
+                        bottom: 80%;
+                        left: 80%;
+                        @media (min-width: 1024px) {
+                            display: none;
+                        }
+                    }
+                    #blue2 {
+                        position: absolute;
+                        top: 80%;
+                        left: 80%;
+                        @media (min-width: 1024px) {
+                            display: none;
+                        }
+                    }
+                }
+
+                .dollar-txt {
+                    position: absolute;
+                    @include flexItems(column , center , center , .5rem);
+                    right: 115%;
+                    z-index: 3;
+                    p {
+                        width: 21px;
+                        height: 21px;
+                        font-family: $motserrat;
+                        background-color: #578C76;
+                        display: flex;
+                        justify-content: center;
+                        align-items: center;
+                        border-radius: 50%;
+                        img {
+                            width: 30%;
+                        }
+                    }
+                    h2 {
+                        white-space: nowrap;
+                        font-size: 13px;
+                        color: #578C76;
+                        text-align: center;
+                    }
+                    @media (min-width: 1024px) {
+                        flex-direction: row;
+                        top: 220px;
+                        right: 50%;
+                        transform: translateX(50%);
+                        h2 {
+                            #bl {
+                                display: none;
+                            }
+                        }
+                    }
+                }
+            }
+
+            &:nth-child(1){
+                &::before {
+                    content: '';
+                    position: absolute;
+                    height: 120px;
+                    width: 1rem;
+                    background-color: #F6F6F6;
+                    top: 60%;
+                    left: 50%;
+                    transform: translateX(-50%);
+                    @media (min-width: 1024px) {
+                        transform: rotate(90deg);
+                        top: -50px;
+                        left: 190%;
+                        height: 200px;
+                    }
+                }
+            }
+
+            &:nth-child(2){
+                &::before {
+                    content: '';
+                    position: absolute;
+                    height: 120px;
+                    width: 1rem;
+                    background-color: #F6F6F6;
+                    top: 50%;
+                    right: 175%;
+                    transform: translateY(-50%) rotate(90deg);
+                    @media (min-width: 1024px) {
+                        right: 38%;
+                        height: 150px;
+                        transform: rotate(0);
+                    }
+                }
+                &::after {
+                    content: '';
+                    position: absolute;
+                    height: 200px;
+                    width: 1rem;
+                    background-color: #F6F6F6;
+                    top: 50%;
+                    right: 263%;
+                    @media (min-width: 1024px) {
+                        right: -80px;
+                        height: 217px;
+                        top: 87px;
+                        transform: rotate(90deg);
+                    }
+                }
+            }
+            &:nth-child(4) {
+                &::before {
+                    content: '';
+                    position: absolute;
+                    height: 120px;
+                    width: 1rem;
+                    background-color: #F6F6F6;
+                    top: 50%;
+                    right: 97%;
+                    transform: translateY(-50%) rotate(90deg);
+                    transform: translateY(-50%) rotate(90deg);
+                    @media (min-width: 1024px) {
+                        right: 50%;
+                        height: 150px;
+                        transform: rotate(0) translateX(50%);
+                    }
+                }
+                &::after {
+                    content: '';
+                    position: absolute;
+                    height: 200px;
+                    width: 1rem;
+                    background-color: #F6F6F6;
+                    bottom: 50%;
+                    right: 131%;
+                    @media (min-width: 1024px) {
+                        right: 128%;
+                        height: 270px;
+                        top: 68px;
+                        transform: rotate(90deg);
+                    }
+                }
+            }
+        }
+
+        @media (min-width: 1024px) {
+            flex-direction: row;
+            gap: 10rem;
+        }
+    }
+}

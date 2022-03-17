@@ -1,0 +1,172 @@
+@import './_navigation.scss';
+.header {
+    width: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 40;
+    transition: all 0.3s ease;
+
+    &::after {
+        content: "";
+        top: 100%;
+        position: absolute;
+        width: 100%;
+        height: 0;
+        background-color: inherit;
+        transition: all 0.3s ease;
+        background-color: rgba(16, 16, 16, 0.6);
+    }
+    
+    &--bg {
+        background-color: rgba(16, 16, 16, 0.6);
+    }
+
+    @media (min-width:800px) {
+        &:hover {
+            background-color: rgba(16, 16, 16, 0.6);
+            &::after {
+                height: 250px;
+            }
+
+            .nav__items {
+                opacity: 1;
+                visibility: visible;
+                .items {
+                    .item {
+                        transform: scaleY(1);
+                    }
+                }
+            }
+        }
+    }
+
+    .nav__items {
+        color: white;
+        opacity: 0;
+        visibility: hidden;
+        transition: all .3s ease-in-out;
+        padding: 1rem 0;
+        position: absolute;
+        top: 100%;
+        width: 100%;
+        left: 0;
+        z-index: 10;
+        .items {
+            width: 100%;
+            @include flexItems(row , flex-end , flex-end , 0);
+            .item {
+                height: 200px;
+                transition: all .3s ease-in-out;
+                transform-origin: top;
+                transform: scaleY(0);
+                text-align: center;
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+
+                a {
+                    color: #BCBCBC;
+                    text-decoration: none;
+                    font-family: $motserrat;
+                    font-size: 14px;
+                    transition: all .3s ease;
+                    margin-bottom: .5rem;
+                    &:hover {
+                        color: white;
+                        text-decoration: underline;
+                    }
+                }
+
+                &:nth-child(1){
+                    width: 93px;
+                }
+                &:nth-child(2){
+                    width: 116px;
+                }
+                &:nth-child(3){
+                    width: 131px;
+                }
+                &:nth-child(4){
+                    width: 120px;
+                }
+                &:nth-child(5){
+                    width: 113px;
+                }
+            }
+
+            @media (min-width: 1024px) {
+                gap: 2rem;
+            }
+        }
+    }
+}
+
+.mobile-navigation {
+    width: 100%;
+    height: 100vh;
+    background-color: $big-title;
+    position: fixed;
+    top: 0;
+    z-index: 30;
+    left: 100%;
+    transition: all .3s ease-in-out;
+    @include flexItems(column , center , flex-start , 1rem);
+    &--open {
+        left: 0;
+    }
+
+    .container {
+        font-family: $motserrat;
+        @include flexItems(column , center , flex-start , 1rem);
+        .navItem {
+            width: 100%;
+            &__item {
+                list-style: none;
+                text-transform: uppercase;
+                color: #BCBCBC;
+                font-weight: 700;
+                transition: all .3s ease-in-out;
+                .ttle {
+                    font-size: 22px;
+                    padding: .5rem 1rem;
+                    border-bottom: 1px solid #393939;
+                    a {
+                        color: inherit;
+                        text-decoration: none;
+                    }
+                }
+                .sublist {
+                    list-style: none;
+                    padding: 1rem 2rem;
+                    transform: scaleY(0);
+                    transform-origin: top;
+                    height: 0;
+                    overflow: hidden;
+                    transition: all .3s ease-in-out;
+                    &__item {
+                        color: #BCBCBC;
+                        font-weight: 400;
+                        padding: 5px;
+                        a {
+                            color: #BCBCBC;
+                            text-decoration: none;
+                        }
+                    }
+
+                    &--active {
+                        transform: scaleY(1);    
+                        height: max-content;                 
+                    }
+                }
+                &.active {
+                    color: $green;
+                }
+            }
+        }
+    }
+
+    @media (min-width:800px) {
+        display: none;
+    }
+}

@@ -1,0 +1,202 @@
+@import '../filter';
+@import '../pagination';
+.main {
+    background-color: white;
+    width: 100%;
+}
+
+.portfolio {
+    width: 100%;
+    padding: 3rem 0;
+    &__category {
+        width: 100%;
+        @include flexItems(row , center , center , 0);
+        flex-wrap: wrap;
+        .select {
+            list-style: none;
+            color: #CACACA;
+            font-weight: 700;
+            padding: .5rem 1.5rem;
+            transition: all .3s ease-in-out;
+            cursor: pointer;
+            &--active {
+                color: #35AF8B;
+            }
+            &--eng {
+                font-family: $motserrat;
+            }
+        }
+        @media (min-width: 800px) {
+            font-size: 28px;
+        }
+    }
+    
+    &__items {
+        width: 100%;
+        padding-top: 3rem;
+        .item {
+            width: 100%;
+            margin-bottom: 3rem;
+            position: relative;
+            border-top: 3px solid #35AF8B;
+            &:last-child {
+                margin-bottom: 0 !important;
+            }
+            .mark {
+                position: absolute;
+                width: 92px;
+                text-align: center;
+                top: 0;
+                left: 0;
+                background-color: #35AF8B;
+                color: white;
+                font-size: 13px;
+                font-weight: 700;
+                padding: 1rem;
+                padding-bottom: 2rem;
+                clip-path: polygon(0 0 , 100% 0 , 100% calc(100% - 1rem) , 50% 100% , 0 calc(100% - 1rem));
+                -webkit-clip-path: polygon(0 0 , 100% 0 , 100% calc(100% - 1rem) , 50% 100% , 0 calc(100% - 1rem));
+                z-index: 5;
+                &.eng {
+                    font-family: $motserrat;
+                }
+            }
+            &__thumbnail {
+                width: 100%;
+                height: 320px;
+                position: relative;
+                overflow: hidden;
+                img {
+                    width: 100%;
+                    height: 100%;
+                    object-fit: cover;
+                }
+            }
+            &__title-section {
+                padding: 2rem 0;
+                img {
+                    width: 100px;
+                    @media (min-width: 768px) {
+                        width: 120px;
+                    }
+                }
+                .title {
+                    color: #000;
+                    font-size: 18px;
+                    margin-top: 1rem;
+                    @media (min-width: 768px) {
+                        font-size: 26px;
+                    }
+                }
+                .button-group {
+                    margin-top: 1rem;
+                    width: 100%;
+                    @include flexItems(row , center , center , .5rem);
+                    .btn {
+                        color: #578C76;
+                        flex: 1;
+                        padding: .75rem 1rem;
+                        text-align: center;
+                        display: flex;
+                        justify-content: center;
+                        align-items: center;
+                        border: 1px solid #e0e0e0;
+                        background-color: #fff;
+                        border-radius: 30px;
+                        p {
+                            width: max-content;
+                            font-size: 12px;
+                            text-align: center;
+                            font-weight: bold;
+                        }
+                    }
+                    @media (min-width:1200px) {
+                        justify-content: flex-start;
+                        .btn {
+                            width: max-content;
+                            flex: none;
+                        }
+                    }
+                }
+            }
+
+            &__details {
+                width: 100%;
+                display: grid;
+                grid-template-columns: max-content 1fr;
+                gap: 2rem;
+                .name {
+                    @include flexItems(row , space-between , flex-start , 0);
+                    padding-top: 2px;
+                    p {
+                        font-size: 13px;
+                        font-weight: 500;
+                        color: #000;
+                        @media (min-width: 768px) {
+                            font-size: 15px;
+                        }
+                    }
+                }
+                .description {
+                    font-size: 14px;
+                    font-weight: 400;
+                    color: #444;
+                    line-height: 24px;
+                    @media (min-width: 768px) {
+                        font-size: 15px;
+                        line-height: 28x;
+                    }
+                }
+            }
+            @media (min-width: 1200px) {
+                display: flex;
+                gap: 3rem;
+                .itms {
+                    flex: 1;
+                }
+                &__thumbnail {
+                    width: 418px;
+                    height: 418px;
+                }
+                &__details {
+                    grid-template-columns: 56px 1fr 56px 1fr;
+                    .name.date {
+                        grid-row: 2/3;
+                        grid-column: 1/2;
+                    }
+                    .description.date {
+                        grid-row: 2/3;
+                        grid-column: 2/3;
+                    }
+                    .name.support {
+                        grid-row: 1/3;
+                        grid-column: 3/4;
+                    }
+                    .description.support {
+                        grid-row: 1/3;
+                        grid-column: 4/5;
+                    }
+                    .name.performance {
+                        grid-row: 3/4;
+                        grid-column: 1/2;
+                    }
+                    .description.performance {
+                        grid-row: 3/4;
+                        grid-column: 2/3;
+                    }
+                    .name.award {
+                        grid-row: 3/4;
+                        grid-column: 3/4;
+                    }
+                    .description.award {
+                        grid-row: 3/4;
+                        grid-column: 4/5;
+                    }
+                }
+            }
+        }
+    }
+    @media (min-width: 800px) {
+        padding: 4rem 0;
+    }
+}

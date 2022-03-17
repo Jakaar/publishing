@@ -1,0 +1,120 @@
+.hero_v {
+    width: 100%;
+    height: 320px;
+    background-image: url('../images/hero-bg.jpeg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    position: relative;
+    &__layer {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: rgba($color: #000000, $alpha: .6);
+    }
+
+    .container.bla {
+        height: 100%;
+    }
+
+    &__content {
+        width: 100%;
+        height: 100%;
+        @include flexItems(column , center, flex-start , 1.5rem);
+        &__title {
+            width: 100%;
+            color: white;
+            margin-top: 3rem;
+            h1.hv-title {
+                font-size: 20px;
+                font-weight: 400;
+                line-height: 30px;
+                span.pp {
+                    font-weight: 600;
+                }
+                &.big {
+                    font-size: 32px !important;
+                    font-weight: 700;
+                    & ~ p {
+                        font-size: 1rem;
+                        line-height: 26px;
+                        letter-spacing: -0.02em;
+                        margin-top: 1rem;
+                    }
+
+                    &--eng {
+                        font-family: $motserrat;
+                    }
+
+                    @media (min-width: 800px) {
+                        font-size: 48px !important;
+                        & ~ p {
+                            font-size: 24px;
+                            line-height: 38px;
+                        }
+                    }
+                }
+            }
+        }
+        &__formula {
+            width: 100%;
+            @include flexItems(row , space-between , flex-end, 0);
+            #desk1 {
+                display: none;
+            }
+            .operator {
+                color: rgba($color: #fff, $alpha: .6);
+                font-family: $motserrat;
+                font-weight: 600;
+                font-size: 26px;
+                margin-bottom: 1rem;
+            }
+        }
+
+        @media (min-width: 600px) {
+            flex-direction: row;
+            align-items: center;
+            &__title {
+                margin: 0;
+            }
+        }
+    }
+    @media (min-width: 800px) {
+        height: 500px;
+        &__content {
+            &__title {
+                margin-bottom: 3rem;
+                h1.hv-title {
+                    font-size: 36px;
+                    line-height: 54px;
+                }
+            }
+            &__formula {
+                justify-content: flex-end;
+                gap: 1rem;
+                width: max-content;
+                margin-top: 8rem;
+            }
+        }
+    }
+
+    @media (min-width: 1024px){
+        &__content {
+            &__formula {
+                #desk1 {
+                    display: block;
+                }
+                #mob1 {
+                    display: none;
+                }
+                .operator {
+                    font-size: 48px;
+                    margin-bottom: 2rem;
+                }
+            }
+        }
+
+    }
+}

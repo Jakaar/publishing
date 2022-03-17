@@ -1,0 +1,75 @@
+.rocket {
+    width: 100%;
+    background-color: $bg-yellow;
+    color: $big-title;
+    position: relative;
+    z-index: 5;
+    &__container {
+        padding: 4rem 0;
+        @include flexItems(column , flex-start , flex-start , 1rem);
+        p {
+            font-size: 14px;
+            margin-top: 10px;
+            span {
+                color: #000;
+                font-weight: 500;
+            }
+        }
+        .title {
+            h1 {
+                font-size: 24px;
+                margin-bottom: 1rem;
+            }
+            p {
+                font-size: 18px;
+                line-height: 30px;
+            }
+        }
+
+        .button {
+            width: 100%;
+            margin-top: 2rem;
+            button {
+                width: 100%;
+                padding: 1rem;
+                text-align: center;
+                background-color: $big-title;
+                color: white;
+                @include flexItems(row , center , center , .75rem);
+                border: 1px solid $big-title;
+                p {
+                    margin: 0;
+                    font-weight: 700;
+                    font-family: $noto;
+                    white-space: nowrap;
+                }
+            }
+        }
+
+        @media (min-width: 800px) {
+            flex-direction: row;
+            justify-content: space-between;
+            align-items: flex-end;
+            gap: 4rem;
+            .button {
+                width: 305px;
+                button {
+                    font-size: 18px;
+                }
+            }
+
+            p {
+                font-size: 16px;
+            }
+
+            .title {
+                h1 {
+                    font-size: 46px;
+                }
+                p {
+                    font-size: 20px;
+                }
+            }
+        }
+    }
+}

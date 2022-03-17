@@ -1,0 +1,250 @@
+.hex {
+    width: 100%;
+    padding-top: 4rem;
+    &__header {
+        width: 100%;
+        margin-bottom: 2rem;
+        @include flexItems(row, space-between, center, 0);
+        font-family: $motserrat;
+        .tex {
+            width: 100%;
+            @include flexItems(row, space-between, center, 0);
+            h2 {
+                text-transform: uppercase;
+                font-size: 24px;
+            }
+            p {
+                font-size: 12px;
+                font-weight: 600;
+                cursor: pointer;
+                a {
+                    text-decoration: none;
+                    color: inherit;
+                }
+            }
+        }
+
+        .tex-img {
+            display: none;
+        }
+    }
+
+    &__slider {
+        width: 100%;
+        height: 254px;
+        overflow: hidden;
+        transition: all 0.3s ease-in-out;
+        background-color: black;
+        position: relative;
+        img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: all 0.3s ease-in-out;
+        }
+        &__layer {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            background-image: linear-gradient(180deg, rgba(0, 0, 0, 0) 0, rgba(0, 0, 0, 0.65) 100%);
+            top: 0;
+            left: 0;
+        }
+
+        &__caption {
+            width: 70%;
+            height: 100%;
+            padding: 1.5rem;
+            color: white;
+            font-family: $noto;
+            @include flexItems(column, flex-end, flex-start, 0);
+            h2 {
+                a {
+                    color: white;
+                    text-decoration: none;
+                    font-size: 18px;
+                    margin-bottom: 0.75rem;
+                }
+            }
+            p {
+                font-size: 14px;
+                line-height: 32px;
+                margin-bottom: 1rem;
+            }
+        }
+    }
+
+    &__nav {
+        width: 100%;
+        position: relative;
+        @include flexItems(row, flex-end, flex-start, 0);
+        &__item {
+            height: 110px;
+            width: 128px;
+            position: relative;
+            clip-path: polygon(0 50%, 25% 0, 75% 0, 100% 50%, 75% 100%, 25% 100%);
+            transition: all 0.3s ease-in-out;
+            background-size: cover;
+            background-position: center;
+            @include flexItems(row, center, center, 0);
+
+            &__layer {
+                position: absolute;
+                top: 0;
+                left: 0;
+                width: 100%;
+                height: 100%;
+                background-color: rgba(0, 0, 0, 0.65);
+            }
+
+            &__inner {
+                height: 4.75rem;
+                width: 85px;
+                clip-path: polygon(0 50%, 25% 0, 75% 0, 100% 50%, 75% 100%, 25% 100%);
+                transition: all 0.3s ease-in-out;
+                @include flexItems(column , center , center , 0);
+                color: $green;
+                cursor: pointer;
+                h3 {
+                    font-size: 13px;
+                    position: relative;
+                    z-index: 2;
+                    width: max-content;
+                }
+                #arrow {
+                    transition: all .3s ease-in-out;
+                    opacity: 0;
+                    visibility: hidden;
+                }
+            }
+
+            &:nth-child(odd) {
+                margin: 55px 0;
+            }
+
+            &:nth-child(1),
+            &:nth-child(2) {
+                margin-right: -32px;
+            }
+
+            &:nth-child(4) {
+                position: absolute;
+                right: 0;
+                top: -55px;
+                @media (min-width: 500px) {
+                    position: relative;
+                }
+            }
+
+            @media (min-width: 500px) {
+                &:nth-child(even){
+                    top: -55px
+                }
+                &:nth-child(odd){
+                    top: 0;
+                    margin: 0;
+                }
+                &:nth-child(1),
+                &:nth-child(3) {
+                    margin-right: -32px;
+                }
+            }
+
+            @media (min-width: 800px) {
+                width: 210px;
+                height: 180px;
+                &__inner {
+                    width: 100%;
+                    height: 100%;
+                }
+                &:nth-child(even){
+                    top: -90px;
+                }
+                &:nth-child(odd){
+                    top: 0;
+                    margin: 0;
+                }
+                &:nth-child(2) {
+                    margin-right: -53px;
+                }
+                &:nth-child(1),
+                &:nth-child(3) {
+                    margin-right: -53px;
+                }
+                &:nth-child(4) {
+                    margin-right: -53px;
+                }
+                h3 {
+                    font-size: 1rem;
+                }
+                &--active {
+                    .hex__nav__item__inner {
+                        gap: 1rem !important;
+                        #arrow {
+                            opacity: 1;
+                            visibility: visible;
+                        }
+                    }
+                }
+            }
+
+            &--active {
+                .hex__nav__item__layer {
+                    background-color: #39c69c !important;
+                }
+                .hex__nav__item__inner {
+                    background-color: #43d1a7 !important;
+                    color: #222;
+                    gap: .25rem;
+                    #arrow {
+                        opacity: 1;
+                        visibility: visible;
+                    }
+                }
+            }
+        }
+    }
+
+    @media (min-width: 800px) {
+        &__header {
+            align-items: flex-start;
+            margin-bottom: 0;
+            margin-top: 4rem;
+            .tex {
+                flex-direction: column;
+                align-items: flex-start;
+                text-align: left;
+                h2 {
+                    font-size: 42px;
+                    margin-bottom: 1rem;
+                }
+                p {
+                    font-size: 14px;
+                }
+            }
+
+            .tex-img {
+                display: block;
+                width: 60%;
+            }
+        }
+
+        &__slider {
+            height: 476px;
+            &__layer {
+                padding: 3rem;
+            }
+
+            &__caption {
+                width: 60%;
+                h2 {
+                    font-size: 24px;
+                }
+                p {
+                    font-size: 1rem;
+                    margin-bottom: 0;
+                }
+            }
+        }
+    }
+}

@@ -1,0 +1,70 @@
+.pagination {
+    width: 100%;
+    margin: auto;
+    padding-top: 2rem;
+    @include flexItems(row , space-between , center , 0);
+    &__item {
+        @include flexItems(row , center , center , 2rem);
+        .button {
+            cursor: pointer;
+            &.prev {
+                transform: rotate(180deg);
+            }
+            &.first {
+                transform: rotate(180deg);
+                display: flex;
+            }
+            &.last {
+                display: flex;
+            }
+        }
+        .page {
+            font-family: $motserrat;
+            color: #000;
+            font-size: 14px;
+            cursor: pointer;
+            &:nth-child(4),
+            &:nth-child(5) {
+                display: none;
+            }
+            &.active {
+                font-weight: 700;
+                color: #578C76;
+                text-decoration: underline;
+            }
+        }
+        &.hidden {
+            opacity: 0;
+            visibility: hidden;
+        }
+    }
+    @media (min-width: 768px) {
+        &__item {
+            gap: 3rem;
+            .page {
+                font-size: 18px;
+                &:nth-child(4),
+                &:nth-child(5) {
+                    display: block;
+                }
+            }
+            .button {
+                display: flex;
+                align-items: center;
+                img {
+                    width: 9px;
+    
+                }
+            }
+        }
+        width: 576px;
+        padding-top: 4rem;
+    }
+    &--programm {
+        padding-top: 0 !important;
+        padding-bottom: 3.5rem !important;
+        @media (min-width: 768px) {
+            padding-bottom: 7rem !important;
+        }
+    }
+}
