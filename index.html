@@ -5,12 +5,23 @@
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <title>INTWEEN</title>
-        <link rel="stylesheet" href="./assets/style/custom.css" />
-        <link rel="stylesheet" href="./assets/style/style.css" />
+		<link rel="stylesheet" href="./assets/style/custom.css" />
+        <link rel="stylesheet" href="./assets/style/style.css"/>
+		<link rel="stylesheet" href="./assets/style/animate.css" />
         <link rel="stylesheet" href="https://unpkg.com/swiper@8/swiper-bundle.min.css" />
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" integrity="sha512-9usAa10IRO0HhonpyAIVpjrylPvoDwiPUiKdWk5t3PyolY1cOd4DSE0Ga+ri4AuTroPR5aQvXU9xC6qOPnzFeg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+		<script src="./assets/js/jquery-1.11.3.min.js"></script>
+		<script src="./assets/js/jquery.waypoints.min.js"></script>
+
+
+
     </head>
     <body>
+		<div id="skipToContent" class="skipnav">
+			<a href="#container">본문 바로가기</a>
+		</div>
+
         <!-- Header starts ------------------- -->
         <header class="header">
             <div class="container">
@@ -71,7 +82,7 @@
                 <div class="hero__clip"></div>
             </div>
             <div class="container">
-                <div class="hero__text">
+                <div class="hero__text ani">
                     <p>Special Growth Maker</p>
                     <img src="./assets/images/Group.png" alt="" class="mobile">
                     <div class="hero__text__line">
@@ -80,59 +91,59 @@
                     </div>
                 </div>
                 <div class="hero__top">
-                    <h2>programm</h2>
-                    <p>View more +</p>
+                    <h2 class="ani">program</h2>
+                    <p class="ani"><a href="#none" title="View more">View more +</a></p>
                 </div>
                 <div class="hero__swiper">
                     <div class="swiper">
                         <div class="swiper-wrapper">
-                            <div class="swiper-slide">
+                            <div class="swiper-slide ani">
                                 <div class="content">
                                     <div class="tag">
                                         <p>모집중</p>
                                         <div class="arrow"></div>
                                     </div>
                                     <div>
-                                        <h3>22 농업기술실용화재단 지원사업 대국민 설명회</h3>
+                                        <h3><a href="#none" title="program1">22 농업기술실용화재단 지원사업 대국민 설명회</a></h3>
                                         <p>농업기술실용화 재단</p>
                                     </div>
                                     <p>2021. 11. 01 ~ 2021. 11. 30</p>
                                 </div>
                             </div>
-                            <div class="swiper-slide">
+                            <div class="swiper-slide ani">
                                 <div class="content">
                                     <div class="tag">
                                         <p>모집중</p>
                                         <div class="arrow"></div>
                                     </div>
                                     <div>
-                                        <h3>22 농업기술실용화재단 지원사업 대국민 설명회</h3>
+                                        <h3><a href="#none" title="program2">22 농업기술실용화재단 지원사업 대국민 설명회</a></h3>
                                         <p>농업기술실용화 재단</p>
                                     </div>
                                     <p>2021. 11. 01 ~ 2021. 11. 30</p>
                                 </div>
                             </div>
-                            <div class="swiper-slide">
+                            <div class="swiper-slide ani">
                                 <div class="content">
                                     <div class="tag tag--yellow">
                                         <p>모집중</p>
                                         <div class="arrow"></div>
                                     </div>
                                     <div>
-                                        <h3>22 농업기술실용화재단 지원사업 대국민 설명회</h3>
+                                        <h3><a href="#none" title="program3">22 농업기술실용화재단 지원사업 대국민 설명회</a></h3>
                                         <p>농업기술실용화 재단</p>
                                     </div>
                                     <p>2021. 11. 01 ~ 2021. 11. 30</p>
                                 </div>
                             </div>
-                            <div class="swiper-slide">
+                            <div class="swiper-slide ani">
                                 <div class="content">
                                     <div class="tag tag--yellow">
                                         <p>모집중</p>
                                         <div class="arrow"></div>
                                     </div>
                                     <div>
-                                        <h3>22 농업기술실용화재단 지원사업 대국민 설명회</h3>
+                                        <h3><a href="#none" title="program4">22 농업기술실용화재단 지원사업 대국민 설명회</a></h3>
                                         <p>농업기술실용화 재단</p>
                                     </div>
                                     <p>2021. 11. 01 ~ 2021. 11. 30</p>
@@ -156,14 +167,16 @@
                 <div class="hex">
                     <div class="hex__header">
                         <div class="tex">
-                            <h2>business</h2>
-                            <p>
+                            <h2 class="ani">business</h2>
+                            <p  class="ani">
                                 <a id="biz" href="./start-up.html">View more +</a>
                             </p>
                         </div>
-                        <img class="tex-img" src="./assets/images/Group (2).png" alt="">
+						<div class="tex-img-area">
+						   <img class="tex-img ani" src="./assets/images/Group (2).png" alt="">
+						</div>
                     </div>
-                    <div class="hex__slider">
+                    <div class="hex__slider ani">
                         <img id="hexpic" src="./assets/images/office0.jfif" alt="">
                         <div class="hex__slider__layer">
                             <div class="hex__slider__caption">
@@ -177,28 +190,28 @@
                         </div>
                     </div>
                     <div class="hex__nav">
-                        <div class="hex__nav__item hex__nav__item--active">
+                        <div class="hex__nav__item hex__nav__item--active ani">
                             <div class="hex__nav__item__layer"></div>
                             <div class="hex__nav__item__inner">
                                 <h3>창업 지원 사업</h3>
                                 <img src="./assets/images/Vector.svg" alt="" id="arrow">
                             </div>
                         </div>
-                        <div class="hex__nav__item">
+                        <div class="hex__nav__item ani">
                             <div class="hex__nav__item__layer"></div>
                             <div class="hex__nav__item__inner">
                                 <h3>영상 콘텐츠 사업</h3>
                                 <img src="./assets/images/Vector.svg" alt="" id="arrow">
                             </div>
                         </div>
-                        <div class="hex__nav__item">
+                        <div class="hex__nav__item ani">
                             <div class="hex__nav__item__layer"></div>
                             <div class="hex__nav__item__inner">
                                 <h3>MICE 사업</h3>
                                 <img src="./assets/images/Vector.svg" alt="" id="arrow">
                             </div>
                         </div>
-                        <div class="hex__nav__item">
+                        <div class="hex__nav__item ani">
                             <div class="hex__nav__item__layer"></div>
                             <div class="hex__nav__item__inner">
                                 <h3>마케팅 사업</h3>
@@ -216,16 +229,16 @@
             <div class="intween">
                 <img src="./assets/images/Group (2).png" alt="">
             </div>
-            <div class="service">
+            <div class="service ani">
                 <div class="service__layer"></div>
                 <div class="container">
                     <div class="service__content">
-                        <h1>service</h1>
-                        <div class="service__description">
+                        <h1 class="ani">service</h1>
+                        <div class="service__description ani">
                             <h2>수출바우처 (해외 판로 지원)</h2>
                             <p>인트윈은 해외(동남아 및 중국) 마케팅 전 과정을 
                                 지원하는 수출 바우처 공식 등록기업 입니다. </p>
-                            <p class="more">View more +</p>
+                            <p class="more"><a href="#none" title="View more">View more +</a></p>
                         </div>
                     </div>
                 </div>
@@ -238,7 +251,7 @@
             <div class="brands">
                 <div class="container">
                     <div class="brands__container">
-                        <div class="brands__brand">
+                        <div class="brands__brand  ani">
                             <div class="logo">
                                 <img src="./assets/images/Group (3).png" alt="">
                             </div>
@@ -246,21 +259,21 @@
                             <p>당산역 40평 규모 영상 스튜디오 실시간 방송 및 
                                 카메라, 음향장비 등 고가의 장비 대여</p>
                         </div>
-                        <div class="brands__brand">
+                        <div class="brands__brand  ani">
                             <div class="logo">
                                 <img src="./assets/images/Group (4).png" alt="">
                             </div>
                             <h2>강사인포</h2>
                             <p>분야별 300명 전문가 보유 에이전시 플랫폼</p>
                         </div>
-                        <div class="brands__brand">
+                        <div class="brands__brand  ani">
                             <div class="logo">
                                 <img src="./assets/images/Group (5).png" alt="">
                             </div>
                             <h2>크라우드인</h2>
                             <p>실전/모의 크라우드 펀딩 테스트베드 플랫폼</p>
                         </div>
-                        <div class="brands__brand">
+                        <div class="brands__brand  ani">
                             <div class="logo">
                                 <img src="./assets/images/Group (6).png" alt="">
                             </div>
@@ -279,15 +292,15 @@
             <div class="rocket">
                 <div class="container">
                     <div class="rocket__container">
-                        <div class="title">
+                        <div class="title ani">
                             <h1>스타트업 로켓레터</h1>
                             <p>예비창업가, 초기창업가, 창업지원기관, 
                                 투자자, 스타트업 실무자라면! </p>
                         </div>
-                        <p><span>매주 월요일 9시</span> 로켓처럼 빠르게 배달되는 
+                        <p class="ani"><span>매주 월요일 9시</span> 로켓처럼 빠르게 배달되는 
                             스타트업 최신 이슈, 투자 소식, 실무 지식, 
                             창업지원사업 소식!</p>
-                        <div class="button">
+                        <div class="button ani">
                             <button>
                                 <p>무료로 구독하기</p>
                                 <img src="./assets/images/Group 264.svg" alt="">
@@ -432,5 +445,6 @@
             });
         </script>
         <script src="./assets/js/script.js"></script>
+		<script src="./assets/js/publish.js"></script>
     </body>
 </html>
